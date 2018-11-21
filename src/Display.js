@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Display extends React.Component {
     componentDidMount() {
@@ -33,11 +34,13 @@ class Display extends React.Component {
                 {this.props.movies.map(movie => {
                     return (
                         <div key={movie.id} id={movie.id}>
-                            <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title}/>
-                            <h2>{movie.title}</h2>
-                            <h3>{movie.overview}</h3>
-                            <h4>Rating: {movie.vote_average} / 10</h4>
-                        </div>
+                            <Link to={`/movie/${movie.id}`}>    
+                                <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title}/>
+                            </Link>
+                                <h2>{movie.title}</h2>
+                                <h3>{movie.overview}</h3>
+                                <h4>Rating: {movie.vote_average} / 10</h4>
+                            </div>
                     )
                 })}
             </section>
