@@ -65,6 +65,17 @@ header h2 {
     width:calc((100% - 180px) / 3);
     border:1px solid rgba(0,0,0,0.4);
     border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display button {
+    margin-top:20px;
+    height:30px;
+    width:150px;
+    font-size:1.2rem;
 }
 
 .selection {
@@ -77,8 +88,25 @@ header h2 {
     margin:20px;
 }
 
+.selection label {
+    font-size:1.5rem;
+    font-weight:600;
+    margin-right:10px;
+}
+
+.selection input[type="text"] {
+    width:200px;
+    height:25px;
+}
+
+input[type="submit"] {
+    display:none;
+}
+
 .selection button {
     height:30px;
-    width:100px;
+    width:150px;
     margin:20px;
+    font-size:1.5rem;
 }
+
