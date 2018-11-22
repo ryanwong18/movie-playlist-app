@@ -25,7 +25,10 @@ const DisplayMovieDetails = (props) => {
                     </div>
                 </div>
                 <p className="overview">{props.movieDetails.overview}</p>
-                <div className="userReviews">User Reviews: {props.movieReviews.length === 0 ? "None": props.movieReviews.map(review => {
+                <div className="userTitle">
+                    <p>User Reviews</p>
+                </div>
+                <div className="userReviews"> {props.movieReviews.length === 0 ? "No User Reviews": props.movieReviews.map(review => {
                     return (
                         <React.Fragment key={review.id}>
                             <p>Author: {review.author}</p>

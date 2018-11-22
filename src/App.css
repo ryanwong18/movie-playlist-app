@@ -15,7 +15,7 @@ body {
 
 .wrapper {
     margin: 0 auto;
-    max-width:1280px;
+    max-width:1200px;
 }
 
 .App {
@@ -126,7 +126,7 @@ input[type="submit"] {
     display:flex;
     justify-content: center;
     margin-bottom:20px;
-    width:60%;
+    width:65%;
 }
 
 .quickInfo {
@@ -138,12 +138,26 @@ input[type="submit"] {
 }
 
 .overview {
-    width:60%;
+    width:65%;
     text-align: left;
     margin-bottom:30px;
+    padding-bottom:30px;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+}
+
+.userTitle {
+    width:65%;
+    text-align: left;
+}
+
+.userTitle p {
+    font-size:1.8rem;
+    font-weight:bold;
+    margin:0;
 }
 
 .userReviews {
     font-size:1.6rem;
-    padding:20px;
+    width:65%;
+    margin-bottom:40px;
 }
