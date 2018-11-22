@@ -31,9 +31,7 @@ class Search extends React.Component {
                 <form action="" onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Search Movies by Title</label>
                     <input type="text" id="title" onChange={this.handleChange} value={this.props.UserInput}/>
-
                     <input type="submit"/>
-        
                 </form>
     
                 <button onClick={this.handleClick}>Top Rated Movies</button>
