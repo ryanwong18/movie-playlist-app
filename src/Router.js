@@ -9,7 +9,9 @@ class Routing extends React.Component {
         this.state = {
             movies:[],
             userInput:{},
-            movieDetails:{}
+            movieDetails:{},
+            topRated:[],
+            reviews:[]
         }
     }
     getUserInput = (value) => {
@@ -37,12 +39,18 @@ class Routing extends React.Component {
             movieDetails:newMovieDetails
         })
     }
+    getReviews = (value) => {
+        const newReviews = [...value]
+        this.setState({
+            reviews:newReviews
+        })
+    }
     render() {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" render={(routeProps) => (<App {...routeProps} getUserInput={this.getUserInput} getMovies={this.getMovies} userInput={this.state.userInput} movies={this.state.movies}/>)}/>
-                    <Route path="/movie/:movieid" render={(routeProps) => (<MovieDetails {...routeProps} getMovieDetails={this.getMovieDetails} movieDetails={this.state.movieDetails}/>)}/>
+                    <Route exact path="/" render={(routeProps) => (<App {...routeProps} getUserInput={this.getUserInput} getMovies={this.getMovies} userInput={this.state.userInput} movies={this.state.movies} />)} />
+                    <Route path="/movie/:movieid" render={(routeProps) => (<MovieDetails {...routeProps} getMovieDetails={this.getMovieDetails} movieDetails={this.state.movieDetails} getReviews={this.getReviews} movieReviews={this.state.reviews}/>)}/>
                 </Switch>
             </Router>
         )

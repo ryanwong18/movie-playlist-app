@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Search extends React.Component {
     handleSubmit = (e) => {
@@ -9,20 +10,36 @@ class Search extends React.Component {
         const value = e.currentTarget.value;
         this.props.getUserInput(value);
     }
+    handleClick = () => {
+        axios({
+            url:'https://api.themoviedb.org/3/movie/top_rated',
+            method: 'GET',
+            params: {
+                api_key: '82c575785cfffa185f5ac39b1f007d50',
+                language:"en-US",
+                page:1
+            }
+        }).then(res => {
+            console.log(res.data.results);
+            this.props.getMovies(res.data.results);
+        })
+    }
     render() {
         return (
-            <form action="" onSubmit={this.handleSubmit}>
-                <label htmlFor="title">Search Movies by Title</label>
-                <input type="text" id="title" onChange={this.handleChange} value={this.props.UserInput}/>
+            <div className="selection">
+                <form action="" onSubmit={this.handleSubmit}>
+                    <label htmlFor="title">Search Movies by Title</label>
+                    <input type="text" id="title" onChange={this.handleChange} value={this.props.UserInput}/>
 
-                <input type="submit"/>
+                    <input type="submit"/>
+        
+                </form>
     
-                {/* <button>Latest Movies</button>
-                <button>Most Popular Movies</button>
+                <button onClick={this.handleClick}>Top Rated Movies</button>
     
-                <label htmlFor="action">Action</label>
+                {/* <label htmlFor="action">Action</label>
                 <input type="radio" value="action" id="action" name="genre"/> */}
-            </form>
+            </div>
         )
     }
 }
