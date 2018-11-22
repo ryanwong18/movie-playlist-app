@@ -18,7 +18,7 @@ const DisplayMovieDetails = (props) => {
             <h2>Runtime: {timeConversion(props.movieDetails.runtime)}</h2>
             <h2>Budget: ${props.movieDetails.budget ? convertMoney(props.movieDetails.budget) : null}</h2>
             <h2>Overview: {props.movieDetails.overview}</h2>
-            <div>Reviews: {props.movieReviews.length === 0 ? "No Reviews": props.movieReviews.map(review => {
+            <div>User Reviews: {props.movieReviews.length === 0 ? "None": props.movieReviews.map(review => {
                 return (
                     <React.Fragment key={review.id}>
                         <p>Author: {review.author}</p>

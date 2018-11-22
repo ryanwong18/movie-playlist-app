@@ -38,7 +38,8 @@ class Display extends React.Component {
                             <Link to={`/movie/${movie.id}`}>    
                                 <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title}/>
                             </Link>
-                            </div>
+                            <button onClick={() => this.props.getFavoriteMovie(movie)}>Save to Favorites</button>
+                        </div>
                     )
                 })}
             </section>

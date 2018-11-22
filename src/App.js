@@ -12,7 +12,7 @@ class App extends Component {
         <Header />
         <main>
           <Search getMovies={this.props.getMovies} userInput={this.props.userInput} getUserInput={this.props.getUserInput}/>
-          <Display userInput={this.props.userInput} getMovies={this.props.getMovies} movies={this.props.movies}/>
+          <Display userInput={this.props.userInput} getMovies={this.props.getMovies} movies={this.props.movies} getFavoriteMovie={this.props.getFavoriteMovie}/>
         </main>
       </div>
     );

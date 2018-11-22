@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
+ 
 class Search extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
@@ -36,6 +37,10 @@ class Search extends React.Component {
                 </form>
     
                 <button onClick={this.handleClick}>Top Rated Movies</button>
+
+                <Link to={`/favorites`}>
+                    <button>Go to Favorites</button>
+                </Link>
     
                 {/* <label htmlFor="action">Action</label>
                 <input type="radio" value="action" id="action" name="genre"/> */}

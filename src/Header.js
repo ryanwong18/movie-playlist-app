@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <header>
-            <h1>Movie Playlist Creator</h1>
+            <h1>Movie List Creator</h1>
         </header>
     )
 }
