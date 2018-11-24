@@ -129,12 +129,21 @@ input[type="submit"] {
     width:65%;
 }
 
+.quickFacts img {
+    width:60%;
+}
+
 .quickInfo {
     margin-left:30px;
+    width:40%;
 }
 
 .quickInfo h3:first-of-type {
     margin-top:0;
+}
+
+.unbold {
+    font-weight:400;
 }
 
 .overview {
@@ -160,4 +169,48 @@ input[type="submit"] {
     font-size:1.6rem;
     width:65%;
     margin-bottom:40px;
+}
+
+.displayFavorites {
+    padding-top:40px;
+    background-color:white;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.displayFavorites h2 {
+    margin-top:0;
+    text-align: center;
+    width:100%;
+}
+
+.favoriteCard {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    margin:20px;
+    width:calc((100% - 160px) / 4);
+    border:1px solid rgba(0,0,0,0.4);
+    border-radius:10px;
+}
+
+.favoriteCard h3 {
+    text-align: center;
+    min-height:50px;
+}
+
+.favoriteCard a {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favoriteCard img {
+    width:60%;
+}
+
+.favoriteCard button {
+    margin-top:30px;
 }

@@ -12,16 +12,16 @@ const DisplayMovieDetails = (props) => {
                 <div className="quickFacts">
                     <img src={`https://image.tmdb.org/t/p/w500/${props.movieDetails.backdrop_path}`} alt={props.movieDetails.title}/>
                     <div className="quickInfo">
-                        <h3>Reviews: {props.movieDetails.vote_average} / 10</h3>
-                        <h3>Released: {props.movieDetails.release_date}</h3>
+                        <h3>Reviews: <span className="unbold">{props.movieDetails.vote_average} / 10</span></h3>
+                        <h3>Released: <span className="unbold">{props.movieDetails.release_date}</span></h3>
                         <h3>Genre: {props.movieDetails.genres ? props.movieDetails.genres.map(genre => {
                             counter++;
                             return (
-                                <span key={genre.id}> {genre.name}{counter < props.movieDetails.genres.length + 1? "," : ""}</span>
+                                <span className="unbold" key={genre.id}> {genre.name}{counter < props.movieDetails.genres.length + 1? "," : ""}</span>
                                 )
                         }) : null}</h3>
-                        <h3>Runtime: {timeConversion(props.movieDetails.runtime)}</h3>
-                        <h3>Budget: ${props.movieDetails.budget ? convertMoney(props.movieDetails.budget) : null}</h3>
+                        <h3>Runtime: <span className="unbold">{timeConversion(props.movieDetails.runtime)}</span></h3>
+                        <h3>Budget: <span className="unbold">${props.movieDetails.budget ? convertMoney(props.movieDetails.budget) : null}</span></h3>
                     </div>
                 </div>
                 <p className="overview">{props.movieDetails.overview}</p>
